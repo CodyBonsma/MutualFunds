@@ -8,7 +8,7 @@ import { Fund } from './fund/fund.model'
 })
 export class FundService {
 
-  fund: Fund ={};
+  // fund: Fund ={};
 
   constructor(private http: HttpClient) { }
 
@@ -22,5 +22,10 @@ export class FundService {
 
   updateFund(fund: Fund): Observable<any> {
     return this.http.patch(`http://localhost:8082/api/funds/${fund.id}`, fund);
+  }
+
+  addFund(data: Fund) {
+    console.log("data used to create new fund:", data)
+    return this.http.post('http://localhost:8082/api/funds/', data);
   }
 }
