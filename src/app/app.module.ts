@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FundsComponent } from './funds/funds.component';
 import { FundComponent } from './fund/fund.component';
+import { EditfundComponent } from './editfund/editfund.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FundsComponent,
-    FundComponent
+    FundComponent,
+    EditfundComponent
   ],
   imports: [
     BrowserModule,

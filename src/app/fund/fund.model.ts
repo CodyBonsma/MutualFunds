@@ -1,5 +1,5 @@
 export interface Fund {
-title: string,
+title?: string,
 description?: string,
 id?: number,
 }
