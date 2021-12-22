@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 
 @Component({
   selector: 'app-funds',
@@ -10,7 +11,10 @@ import { Fund } from '../fund/fund.model';
 })
 export class FundsComponent implements OnInit {
 
-  constructor(private fundService: FundService, private http: HttpClient) { }
+  constructor(
+    private fundService: FundService, 
+    private http: HttpClient,
+    public dialog: MatDialog) { }
 
   funds: Fund[] = [];
 
@@ -20,5 +24,13 @@ export class FundsComponent implements OnInit {
       this.funds = payload;
     })
   }
+
+  openDialog(){
+    // this.dialog.open()
+  }
+
+  // createFund(): void{
+  //   this.fundService.addFund(data)
+  // }
 
 }
