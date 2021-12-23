@@ -9,8 +9,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FundService {
 
-  // fund: Fund ={};
-
   constructor(private http: HttpClient) { }
 
   // add material form 
@@ -22,6 +20,7 @@ export class FundService {
     assetClass: new FormControl(''),
     expenseRatio: new FormControl(''),
     price: new FormControl(''),
+    YTD: new FormControl(''),
   });
 
   getFunds(): Observable<any>{

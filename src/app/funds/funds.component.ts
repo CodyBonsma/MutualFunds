@@ -23,6 +23,7 @@ export class FundsComponent implements OnInit {
     this.fundService.getFunds().subscribe(payload => {
       console.log("THis is the payload:", payload)
       this.funds = payload;
+      // console.log("THIS IS IN FUND:", this.funds)
     })
   }
 

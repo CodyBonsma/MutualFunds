@@ -10,7 +10,7 @@ import { Fund } from './fund.model'
 })
 export class FundComponent implements OnInit {
 
-  fund: Fund = {};
+  fund: any = [];
 
   constructor(
     private route: ActivatedRoute, 

@@ -1,10 +1,9 @@
 <h1>Mutual Funds</h1>
 
 <div *ngFor="let fund of funds">
-    <a [routerLink]="['/funds', fund.id]">{{fund.title}}</a>
+    <a [routerLink]="['/funds', fund.id]">{{fund.name}}</a>
 </div>
 
 <hr/>
 
 <button mat-raised-button (click)="openDialog()">add fund</button> 
-<a routerLink="add">go to add</a>

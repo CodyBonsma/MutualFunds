@@ -1,16 +1,30 @@
 @import "@angular/material/prebuilt-themes/indigo-pink.css";
 
+.container {
+    display: flex;
+    background-color: gold;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    background-color: green;
+    padding: 20px;
+}
+
 body {
     margin: 0px;
     padding: 0px;
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
-div.container {
-    margin: 0px 40px;
-}
+// div.container {
+//     margin: 0px 40px;
+// }
 
 .fill-remaining-space {
     flex: 1 1 auto;
@@ -31,4 +45,10 @@ form.normal-form {
 
 .button-row button {
     margin: 5px;
+}
+
+.close-btn button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

@@ -10,7 +10,7 @@ import { Fund } from '../fund/fund.model'
 })
 export class EditfundComponent implements OnInit {
 
-  fund: Fund = {};
+  // fund: Fund = {};
 
   constructor(
     private router: Router, 
@@ -19,21 +19,21 @@ export class EditfundComponent implements OnInit {
 
   ngOnInit(): void {
     // adding the + in front of the value transforms it into a number
-    this.route.params.subscribe(params =>{
-      const myId = +params['id'];
+    // this.route.params.subscribe(params =>{
+    //   const myId = +params['id'];
 
-      console.log('My id is:', myId);
+    //   console.log('My id is:', myId);
 
-      this.fundService.getFund(myId).subscribe(payload => {
-        console.log("this is the single fund payload", payload);
-        this.fund = payload;
-      });
-    })
+    //   this.fundService.getFund(myId).subscribe(payload => {
+    //     console.log("this is the single fund payload", payload);
+    //     this.fund = payload;
+    //   });
+    // })
   }
 
   edit(): void{
-    this.fundService.updateFund(this.fund).subscribe(data => {
-      console.log('updated data:', data);
-    })
+    // this.fundService.updateFund(this.fund).subscribe(data => {
+    //   console.log('updated data:', data);
+    // })
   }
 }
