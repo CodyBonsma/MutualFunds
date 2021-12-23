@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
+import { AddFundComponent } from '../addfund/add-fund.component';
 import { Fund } from '../fund/fund.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 
@@ -26,11 +27,11 @@ export class FundsComponent implements OnInit {
   }
 
   openDialog(){
-    // this.dialog.open()
+    const dialogConfig = new MatDialogConfig();
+    // dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(AddFundComponent, dialogConfig);
   }
-
-  // createFund(): void{
-  //   this.fundService.addFund(data)
-  // }
 
 }

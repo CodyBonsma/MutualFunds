@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Fund } from './fund/fund.model'
+import { Fund } from './fund/fund.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,17 @@ export class FundService {
   // fund: Fund ={};
 
   constructor(private http: HttpClient) { }
+
+  // add material form 
+
+  form: FormGroup = new FormGroup({
+    $key: new FormControl(null),
+    name: new FormControl('', Validators.required),
+    ticker: new FormControl('', Validators.required),
+    assetClass: new FormControl(''),
+    expenseRatio: new FormControl(''),
+    price: new FormControl(''),
+  });
 
   getFunds(): Observable<any>{
     return this.http.get("http://localhost:8082/api/funds");

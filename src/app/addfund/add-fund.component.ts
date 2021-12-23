@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FundService } from '../fund.service';
 
 @Component({
   selector: 'app-add-fund',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddFundComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: FundService) { }
 
   ngOnInit(): void {
   }
 
+
+  onClear(): void {
+    this.service.form.reset();
+  }
 }
