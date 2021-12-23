@@ -17,19 +17,22 @@
           </mat-form-field>
           <mat-form-field>
               <input formControlName="assetClass" matInput placeholder="Asset Class">
-          </mat-form-field>     
+          </mat-form-field>   
+          <mat-form-field>
+            <input formControlName="expenseRatio" matInput placeholder="Expence Ratio">
+         </mat-form-field>
       </div>
    </mat-grid-tile>
    <mat-grid-tile>
         <div class="controls-container">
          <mat-form-field>
-            <input formControlName="expenseRatio" matInput placeholder="Expence Ratio">
-         </mat-form-field>
-         <mat-form-field>
            <input formControlName="price" matInput placeholder="Price">
         </mat-form-field>
+        <mat-form-field>
+            <input formControlName="YTD" matInput placeholder="YTD">
+         </mat-form-field>  
         <div class="button-row">
-          <button mat-raised-button color="primary" type="submit">Submit</button>
+          <button mat-raised-button color="primary" (click)="createFund()" type="submit">Submit</button>
           <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
         </div>
         </div>  
