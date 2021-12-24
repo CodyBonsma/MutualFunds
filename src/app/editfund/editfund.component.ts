@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model'
@@ -12,22 +13,25 @@ export class EditfundComponent implements OnInit {
 
   // fund: Fund = {};
 
+  title: string = "Edit Fund"
+
   constructor(
     private router: Router, 
-    private fundService: FundService, 
-    private route: ActivatedRoute) { }
+    public service: FundService, 
+    private route: ActivatedRoute,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
     // adding the + in front of the value transforms it into a number
     // this.route.params.subscribe(params =>{
-    //   const myId = +params['id'];
+    //   console.log(params)
 
-    //   console.log('My id is:', myId);
+      // console.log('My id is:', myId);
 
-    //   this.fundService.getFund(myId).subscribe(payload => {
-    //     console.log("this is the single fund payload", payload);
-    //     this.fund = payload;
-    //   });
+      // this.fundService.getFund(myId).subscribe(payload => {
+      //   console.log("this is the single fund payload", payload);
+      //   this.fund = payload;
+      // });
     // })
   }
 
@@ -36,4 +40,9 @@ export class EditfundComponent implements OnInit {
     //   console.log('updated data:', data);
     // })
   }
+
+    // onclear button that clears data in dialog modal
+    onClear(): void {
+      this.service.form.reset();
+    }
 }

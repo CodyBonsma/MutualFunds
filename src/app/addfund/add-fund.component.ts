@@ -13,6 +13,8 @@ export class AddFundComponent implements OnInit {
     public service: FundService, 
     public dialog: MatDialog) { }
 
+    title: string = "Add Fund"
+
   ngOnInit(): void {
   }
 

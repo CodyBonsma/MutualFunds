@@ -41,7 +41,6 @@ export class FundService {
   }
 
   deleteFund(id: number){
-    console.log("REACHED THE SERVICE DEL")
     return this.http.delete(`http://localhost:8082/api/funds/${id}`);
   }
 }

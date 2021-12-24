@@ -34,7 +34,7 @@
         <ng-container matColumnDef="actions">
             <th matt-header-cell *matHeaderCellDef>Actions</th>
             <td matt-cell *matCellDef="let row">
-                <button mat-icon-button  (click)="editFund(row.id)"><mat-icon>launch</mat-icon></button>
+                <button mat-icon-button  (click)="editFund(row)"><mat-icon>launch</mat-icon></button>
                 <button mat-icon-button  (click)="deleteFund(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
             </td>
         </ng-container> 

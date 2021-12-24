@@ -1,12 +1,41 @@
-<p>editfund works!</p>
+<h2>{{title}}</h2>
+<hr/>
+<form [formGroup]="service.form" [ngClass]="data" class="normal-form">
+<mat-grid-list cols="2">
+   <mat-grid-tile>
+      <div class="controls-container">
+          <input type="hidden" formControlName="$key">
+          <mat-form-field>
+              <input formControlName="name" matInput placeholder="Fund Name">
+              <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input formControlName="ticker" matInput placeholder="Ticker">
+              <mat-error>This field is mandatory</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+              <input formControlName="assetClass" matInput placeholder="Asset Class">
+          </mat-form-field>   
+          <mat-form-field>
+            <input formControlName="expenseRatio" matInput placeholder="Expence Ratio">
+         </mat-form-field>
+      </div>
+   </mat-grid-tile>
+   <mat-grid-tile>
+        <div class="controls-container">
+         <mat-form-field>
+           <input formControlName="price" matInput placeholder="Price">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName="YTD" matInput placeholder="YTD">
+         </mat-form-field>  
+        <div class="button-row">
+          <button mat-raised-button color="primary" (click)="edit()" type="submit">Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+        </div>  
+   </mat-grid-tile>
+</mat-grid-list>
+</form>
 
-<div>
-  <!-- TITLE:  <input [(ngModel)]="fund.title"> -->
-</div>
-
-<div>
-    <!-- DESCRIPTION:  <input [(ngModel)]="fund.description"> -->
-</div>
-
-<button (click)="edit()">update fund</button>
   

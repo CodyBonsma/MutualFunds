@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FundService } from '../fund.service';
 import { AddFundComponent } from '../addfund/add-fund.component';
+import { EditfundComponent } from '../editfund/editfund.component';
 import { Fund } from '../fund/fund.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
 import { Observable } from 'rxjs';
@@ -43,12 +44,17 @@ export class FundsComponent implements OnInit {
     console.log("ID FROM THE DELETE BUTTON", data);
     this.fundService.deleteFund(data).subscribe(() => {
       console.log("success in deleting fund");
-    this.ngOnInit();
+      this.ngOnInit();
     })
   }
 
   editFund(data: Observable<any>){
-    console.log("ID FROM UPDATE FUND", data)
+    console.log("data to edit:", data)
+    const obj = data;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    let dialogRef = this.dialog.open(EditfundComponent, {autoFocus: true, width: "60%", data: obj});
   }
 
 }
