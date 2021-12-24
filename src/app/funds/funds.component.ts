@@ -19,6 +19,8 @@ export class FundsComponent implements OnInit {
 
   funds: Fund[] = [];
 
+ tableConfig: string[] = ["name", "ticker", "assetClass", "expenseRatio", "price", "YTD"];
+
   ngOnInit(): void {
     this.fundService.getFunds().subscribe(payload => {
       console.log("THis is the payload:", payload)

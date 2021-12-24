@@ -1,9 +1,38 @@
 <h1>Mutual Funds</h1>
 
-<div *ngFor="let fund of funds">
+<!-- <div *ngFor="let fund of funds">
     <a [routerLink]="['/funds', fund.id]">{{fund.name}}</a>
-</div>
+</div> -->
 
-<hr/>
+<div class="mutual-table">
+    <table mat-table [dataSource]="funds" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th matt-header-cell *matHeaderCellDef>Fund Name</th>
+            <td matt-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+        <ng-container matColumnDef="ticker">
+            <th matt-header-cell *matHeaderCellDef> Ticker</th>
+            <td matt-cell *matCellDef="let element">{{element.ticker}}</td>
+        </ng-container> 
+        <ng-container matColumnDef="assetClass">
+            <th matt-header-cell *matHeaderCellDef>Asset Class</th>
+            <td matt-cell *matCellDef="let element">{{element.assetClass}}</td>
+        </ng-container> 
+        <ng-container matColumnDef="expenseRatio">
+            <th matt-header-cell *matHeaderCellDef>Expese Ratio</th>
+            <td matt-cell *matCellDef="let element">{{element.expenseRatio}}%</td>
+        </ng-container> 
+        <ng-container matColumnDef="price">
+            <th matt-header-cell *matHeaderCellDef>Price</th>
+            <td matt-cell *matCellDef="let element">{{element.price | currency}}</td>
+        </ng-container> 
+        <ng-container matColumnDef="YTD">
+            <th matt-header-cell *matHeaderCellDef>YTD</th>
+            <td matt-cell *matCellDef="let element">{{element.YTD}}%</td>
+        </ng-container> 
+        <tr mat-header-row *matHeaderRowDef="tableConfig"></tr>
+        <tr mat-row *matRowDef="let row; columns: tableConfig;"></tr>
+    </table>
+</div>
 
 <button mat-raised-button (click)="openDialog()">add fund</button> 

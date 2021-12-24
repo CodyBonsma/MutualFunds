@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+}
+
+th {
+    border-bottom: solid 1.4px black;
+    background-color: rgb(175, 172, 172);
+}
+
+td {
+    border-bottom: solid 0.5px grey;
+}
+
+.mutual-table {
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.mat-header-cell {
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .mat-cell {
+    text-align: center;
+    justify-content:center;
+  }

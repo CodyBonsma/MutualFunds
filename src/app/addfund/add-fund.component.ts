@@ -16,10 +16,10 @@ export class AddFundComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // function to create a new fund and send it to local db
   createFund(){
     if (this.service.form.valid){
       const obj = this.service.form.value;
-      console.log("WHAT WE GET BACK:", obj);
       this.service.addFund(obj).subscribe(() => {
         console.log("success in adding a new fund");
         this.dialog.closeAll();
@@ -30,10 +30,12 @@ export class AddFundComponent implements OnInit {
     }
   }
 
+  // onclear button that clears data in dialog modal
   onClear(): void {
     this.service.form.reset();
   }
 
+  // triggered once new data is submitted. new data pulled and page is refreshed
   getNewData(): void{
     this.service.getFunds();
     window.location.reload();
