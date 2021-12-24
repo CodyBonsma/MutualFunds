@@ -1,36 +1,36 @@
 <h2>{{title}}</h2>
 <hr/>
-<form [formGroup]="service.form" [ngClass]="data" class="normal-form">
+<form [formGroup]="service.form" class="normal-form">
 <mat-grid-list cols="2">
    <mat-grid-tile>
       <div class="controls-container">
           <input type="hidden" formControlName="$key">
           <mat-form-field>
-              <input formControlName="name" matInput placeholder="Fund Name">
+              <input formControlName="name" matInput placeholder="Fund Name" [(ngModel)]="editData.name" >
               <mat-error>This field is mandatory</mat-error>
           </mat-form-field>
           <mat-form-field>
-              <input formControlName="ticker" matInput placeholder="Ticker">
+              <input formControlName="ticker" matInput placeholder="Ticker" [(ngModel)]="editData.ticker">
               <mat-error>This field is mandatory</mat-error>
           </mat-form-field>
           <mat-form-field>
-              <input formControlName="assetClass" matInput placeholder="Asset Class">
+              <input formControlName="assetClass" matInput placeholder="Asset Class" [(ngModel)]="editData.assetClass">
           </mat-form-field>   
           <mat-form-field>
-            <input formControlName="expenseRatio" matInput placeholder="Expence Ratio">
+            <input formControlName="expenseRatio" matInput placeholder="Expence Ratio" [(ngModel)]="editData.expenseRatio">
          </mat-form-field>
       </div>
    </mat-grid-tile>
    <mat-grid-tile>
         <div class="controls-container">
          <mat-form-field>
-           <input formControlName="price" matInput placeholder="Price">
+           <input formControlName="price" matInput placeholder="Price" [(ngModel)]="editData.price">
         </mat-form-field>
         <mat-form-field>
-            <input formControlName="YTD" matInput placeholder="YTD">
+            <input formControlName="YTD" matInput placeholder="YTD" [(ngModel)]="editData.YTD">
          </mat-form-field>  
         <div class="button-row">
-          <button mat-raised-button color="primary" (click)="edit()" type="submit">Submit</button>
+          <button mat-raised-button color="primary" (click)="edit(editData)" type="submit">Submit</button>
           <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
         </div>
         </div>  

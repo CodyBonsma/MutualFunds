@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model'
 
@@ -14,12 +15,14 @@ export class EditfundComponent implements OnInit {
   // fund: Fund = {};
 
   title: string = "Edit Fund"
+  editData: Fund = this.data;
 
   constructor(
     private router: Router, 
     public service: FundService, 
     private route: ActivatedRoute,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
+
 
   ngOnInit(): void {
     // adding the + in front of the value transforms it into a number
@@ -35,10 +38,12 @@ export class EditfundComponent implements OnInit {
     // })
   }
 
-  edit(): void{
+  edit(newData: any){
     // this.fundService.updateFund(this.fund).subscribe(data => {
     //   console.log('updated data:', data);
     // })
+
+    console.log(newData)
   }
 
     // onclear button that clears data in dialog modal
