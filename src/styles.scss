@@ -2,24 +2,27 @@
 
 .container {
     display: flex;
-    background-color: gold;
-    flex-direction: column;
+    background-color: blueviolet !important;
+    flex-direction: row;
+    align-items: stretch;
     width: 100vw;
     height: 100vh;
+    flex: 1 0 100%;
 }
 
 header {
     background-color: green;
     padding: 20px;
+    width: 100%;
 }
 
-body {
+
+html, body { height: 100%; }
+body { margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
     margin: 0px;
     padding: 0px;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 // div.container {
@@ -53,6 +56,4 @@ form.normal-form {
     justify-content: flex-end;
 }
 
-table {
-    width: 100%;
-}
+

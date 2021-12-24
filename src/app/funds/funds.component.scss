@@ -13,10 +13,13 @@ td {
 
 .mutual-table {
     // text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translateX(20%);
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 70%;
 }
 
 .mat-header-cell {
