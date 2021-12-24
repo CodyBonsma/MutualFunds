@@ -39,4 +39,9 @@ export class FundService {
     console.log("data used to create new fund:", data)
     return this.http.post('http://localhost:8082/api/funds/', data);
   }
+
+  deleteFund(id: number){
+    console.log("REACHED THE SERVICE DEL")
+    return this.http.delete(`http://localhost:8082/api/funds/${id}`);
+  }
 }

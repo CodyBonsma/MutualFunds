@@ -1,6 +1,6 @@
 <h1>Mutual Funds</h1>
-
-<!-- <div *ngFor="let fund of funds">
+<!-- 
+<div *ngFor="let fund of funds">
     <a [routerLink]="['/funds', fund.id]">{{fund.name}}</a>
 </div> -->
 
@@ -8,7 +8,8 @@
     <table mat-table [dataSource]="funds" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
             <th matt-header-cell *matHeaderCellDef>Fund Name</th>
-            <td matt-cell *matCellDef="let element">{{element.name}}</td>
+            <td matt-cell *matCellDef="let element"><a [routerLink]="['/funds', element.id]">{{element.name}}</a>
+            </td>
         </ng-container>
         <ng-container matColumnDef="ticker">
             <th matt-header-cell *matHeaderCellDef> Ticker</th>
@@ -33,8 +34,8 @@
         <ng-container matColumnDef="actions">
             <th matt-header-cell *matHeaderCellDef>Actions</th>
             <td matt-cell *matCellDef="let row">
-                <button mat-icon-button>Edit</button>
-                <button mat-icon-button color="warn">Delete</button>
+                <button mat-icon-button  (click)="editFund(row.id)"><mat-icon>launch</mat-icon></button>
+                <button mat-icon-button  (click)="deleteFund(row.id)" color="warn"><mat-icon>delete_outline</mat-icon></button>
             </td>
         </ng-container> 
         <tr mat-header-row *matHeaderRowDef="tableConfig"></tr>
