@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { FundService } from '../fund.service';
 import { Fund } from '../fund/fund.model'
@@ -20,6 +21,7 @@ export class EditfundComponent implements OnInit {
   constructor(
     private router: Router, 
     public service: FundService, 
+    public dialog: MatDialog,
     private route: ActivatedRoute,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
@@ -39,9 +41,10 @@ export class EditfundComponent implements OnInit {
   }
 
   edit(newData: any){
-    // this.fundService.updateFund(this.fund).subscribe(data => {
-    //   console.log('updated data:', data);
-    // })
+    this.service.updateFund(newData).subscribe(data => {
+      console.log('updated data:', data);
+      this.dialog.closeAll();
+    })
 
     console.log(newData)
   }
