@@ -2,12 +2,12 @@
 
 .container {
     display: flex;
-    background-color: blueviolet !important;
+    background-color: whitesmoke !important;
     flex-direction: row;
-    align-items: stretch;
+    // justify-content: space-evenly;
     width: 100vw;
     height: 100vh;
-    flex: 1 0 100%;
+    // flex: 1 0 100%;
 }
 
 header {
@@ -57,6 +57,23 @@ form.normal-form {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+.funds-headline {
+    background-color: #8ebf42;
+    margin: 5px;
+    color: #ffffff;
+    z-index: 10;
+    width: 500px;
+    height: 150px;
+    position: relative;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    margin-top: 100px;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    // line-height: 30px;
 }
 
 
