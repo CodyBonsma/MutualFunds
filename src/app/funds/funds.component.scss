@@ -13,9 +13,11 @@ th {
 
 .mutual-table {
     text-align: center;
-    top: 20%;
+    position: relative;
     left: 50%;
-    transform: translateX(20%);
+    top: 50%;
+    margin-top: 170px;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;

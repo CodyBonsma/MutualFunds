@@ -53,4 +53,8 @@ export class EditfundComponent implements OnInit {
     onClear(): void {
       this.service.form.reset();
     }
+
+    close(): void {
+      this.dialog.closeAll();
+    }
 }

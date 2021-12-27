@@ -4,7 +4,7 @@ import { FundService } from '../fund.service';
 import { AddFundComponent } from '../addfund/add-fund.component';
 import { EditfundComponent } from '../editfund/editfund.component';
 import { Fund } from '../fund/fund.model';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog'
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 
 @Component({
