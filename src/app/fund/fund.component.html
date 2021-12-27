@@ -22,7 +22,7 @@
         <b>YTD:</b>  {{fund.YTD}}%
     </mat-card-content>
     <mat-card-actions align="end">
-        <button mat-raised-button>edit</button>
-        <!-- <button mat-button></button> -->
+        <button mat-raised-button (click)="edit()">edit</button>
+        <button mat-raised-button routerLink="/funds">home</button>
     </mat-card-actions>
 </mat-card>

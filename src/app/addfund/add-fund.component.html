@@ -1,7 +1,14 @@
 
 <!-- <button mat-raised-button color="basic" class="close-btn">Close</button> -->
+<div class="dialog-header">
+  <div>
+    <h2>{{title}}</h2>
+  </div>
+  <div>
+    <button (click)="close()" mat-fab><mat-icon>clear</mat-icon></button> 
+  </div>
+</div>
 
-<h2>{{title}}</h2>
 <hr/>
 <form [formGroup]="service.form" class="normal-form">
 <mat-grid-list cols="2">

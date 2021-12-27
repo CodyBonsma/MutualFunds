@@ -42,4 +42,9 @@ export class AddFundComponent implements OnInit {
     this.service.getFunds();
     window.location.reload();
   }
+
+close(): void {
+  this.dialog.closeAll();
+}
+
 }
