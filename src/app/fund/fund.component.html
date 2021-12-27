@@ -8,8 +8,18 @@
 
 <mat-card class="fund-card">
     <mat-card-title>{{fund.name}}</mat-card-title>
+    <mat-divider></mat-divider>
     <mat-card-content>
-        Fund content
+        <br/>
+        <b>Ticker:</b>  {{fund.ticker}}
+        <br/>
+        <b>Assect Class:</b>  {{fund.assetClass}}
+        <br/>
+        <b>Expense Ratio:</b>  {{fund.expenseRatio}}%
+        <br/>
+        <b>Price:</b>  {{fund.price | currency}}
+        <br/>
+        <b>YTD:</b>  {{fund.YTD}}%
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-raised-button>edit</button>

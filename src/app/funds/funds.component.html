@@ -11,27 +11,38 @@
             <ng-container matColumnDef="name">
                 <th matt-header-cell *matHeaderCellDef>Fund Name</th>
                 <td matt-cell *matCellDef="let element"><a [routerLink]="['/funds', element.id]">{{element.name}}</a>
+                    <mat-divider></mat-divider>
                 </td>
             </ng-container>
             <ng-container matColumnDef="ticker">
                 <th matt-header-cell *matHeaderCellDef> Ticker</th>
-                <td matt-cell *matCellDef="let element">{{element.ticker}}</td>
+                <td matt-cell *matCellDef="let element">{{element.ticker}}
+                <mat-divider></mat-divider>
+            </td>
             </ng-container> 
             <ng-container matColumnDef="assetClass">
                 <th matt-header-cell *matHeaderCellDef>Asset Class</th>
-                <td matt-cell *matCellDef="let element">{{element.assetClass}}</td>
+                <td matt-cell *matCellDef="let element">{{element.assetClass}}
+                <mat-divider></mat-divider>
+            </td>
             </ng-container> 
             <ng-container matColumnDef="expenseRatio">
                 <th matt-header-cell *matHeaderCellDef>Expese Ratio</th>
-                <td matt-cell *matCellDef="let element">{{element.expenseRatio}}%</td>
+                <td matt-cell *matCellDef="let element">{{element.expenseRatio}}%
+                <mat-divider></mat-divider>
+            </td>
             </ng-container> 
             <ng-container matColumnDef="price">
                 <th matt-header-cell *matHeaderCellDef>Price</th>
-                <td matt-cell *matCellDef="let element">{{element.price | currency}}</td>
+                <td matt-cell *matCellDef="let element">{{element.price | currency}}
+                <mat-divider></mat-divider>
+            </td>
             </ng-container> 
             <ng-container matColumnDef="YTD">
                 <th matt-header-cell *matHeaderCellDef>YTD</th>
-                <td matt-cell *matCellDef="let element">{{element.YTD}}%</td>
+                <td matt-cell *matCellDef="let element">{{element.YTD}}%
+                <mat-divider></mat-divider>
+            </td>
             </ng-container> 
             <ng-container matColumnDef="actions">
                 <th matt-header-cell *matHeaderCellDef>Actions</th>
