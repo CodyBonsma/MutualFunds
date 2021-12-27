@@ -1,8 +1,18 @@
-<p>fund works!</p>
+<!-- <p>fund works!</p>
 
 <p>{{fund.name}}</p>
 
 <p>{{fund.id}}</p>
 
-<button (click)="edit()">edit the fund</button>
+<button (click)="edit()">edit the fund</button> -->
 
+<mat-card class="fund-card">
+    <mat-card-title>{{fund.name}}</mat-card-title>
+    <mat-card-content>
+        Fund content
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-raised-button>edit</button>
+        <!-- <button mat-button></button> -->
+    </mat-card-actions>
+</mat-card>

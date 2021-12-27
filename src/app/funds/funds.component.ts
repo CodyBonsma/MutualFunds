@@ -32,12 +32,12 @@ export class FundsComponent implements OnInit {
     })
   }
 
-  openDialog(){
+  openDialog(): void{
     const dialogConfig = new MatDialogConfig();
     // dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = "60%";
-    this.dialog.open(AddFundComponent, dialogConfig);
+    this.dialog.open(AddFundComponent, {autoFocus: true, width: "60%", data: null});
   }
 
   deleteFund(data: number){
