@@ -93,4 +93,19 @@ mat-toolbar {
     flex: 1 1 auto;
 }
 
+.icon-link {
+    color: white !important;
+}
+
+.creator {
+    font-family: monospace;
+    position: relative;
+    text-align: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -250%);
+    padding: 10px;
+    opacity: 60%;
+}
+
 
