@@ -16,6 +16,7 @@ export class AddFundComponent implements OnInit {
     title: string = "Add Fund"
 
   ngOnInit(): void {
+    this.service.form.reset();
   }
 
   // function to create a new fund and send it to local db
